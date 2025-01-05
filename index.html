@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>題庫練習網站</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .question-container {
+            margin-bottom: 20px;
+        }
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .options-container button {
+            margin: 5px;
+            padding: 10px;
+            cursor: pointer;
+            width: 80%; /* 控制按鈕寬度，保持美觀 */
+        }
+        .correct {
+            background-color: green;
+            color: white;
+        }
+        .incorrect {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="question-container">
+        <h2 id="question">這裡是題目</h2>
+    </div>
+    <div class="options-container">
+        <button class="option" onclick="checkAnswer(this)">選項 1</button>
+        <button class="option" onclick="checkAnswer(this)">選項 2</button>
+        <button class="option" onclick="checkAnswer(this)">選項 3</button>
+        <button class="option" onclick="checkAnswer(this)">選項 4</button>
+    </div>
+    <div id="feedback" style="margin-top: 20px;"></div>
+
+    <script>
+        const questions = [
+            {
+                question: "一般說來,執行緒在執行的時候所需的資源將會比行程來的",
+                options: ["小", "一樣", "大", "無法確定,要視情況"],
+                correct: "小"
+            },
+            {
+                question: "一般說來,行程可以透過下列何者來與本地端作業系統溝通",
+                options: ["系統呼叫", "聲音", "傳聲筒", "變數傳遞"],
+                correct: "系統呼叫"
+            },
+            {
+                question: "一般在UNIX 系統上可見到的 pthread(POSIX thread),是遵循下列何種標準",
+                options: ["POSIX 1003.1c", "POSIX 1003.5", "POSIX 2003", "POSIX 801.C"],
+                correct: "POSIX 1003.1c"
+            },
+            {
+                question: "一般說來,行程在做本文切換的時候,會比執行緒作本文切換時來的慢,其主要原因是",
+                options: ["行程在做本文切換的時候需要轉換整個虛擬記憶體位址", "行程需要釋放CPU的使用權", "行程需要獲得CPU的使用權", "行程要傳遞資訊給CPU"],
+                correct: "行程在做本文切換的時候需要轉換整個虛擬記憶體位址"
+            },
+            {
+                question: "一般說來,我們如何計算一個行程的下一個CPU使用時間",
+                options: ["算術平均數", "指數平均數", "加權平均數", "統計平均數"],
+                correct: "指數平均數"
+            },
+            {
+                question: "長期、中期、短期排班程式中,何者的執行頻率最高",
+                options: ["長期排班程式", "中期排班程式", "短期排班程式", "多層佇列排程"],
+                correct: "短期排班程式"
+            },
+            {
+                question: "下列哪種排班演算法較適合使用在分時系統中",
+                options: ["FCFS", "SJF", "RR", "SRT"],
+                correct: "RR"
+            }
+        ];
+
+        let currentQuestionIndex;
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function loadQuestion() {
+            currentQuestionIndex = Math.floor(Math.random() * questions.length);
+            const currentQuestion = questions[currentQuestionIndex];
+            document.getElementById('question').textContent = currentQuestion.question;
+
+            const optionsButtons = document.querySelectorAll('.option');
+            shuffleArray(currentQuestion.options);
+
+            optionsButtons.forEach((button, index) => {
+                button.textContent = currentQuestion.options[index];
+                button.classList.remove('correct', 'incorrect');
+            });
+
+            document.getElementById('feedback').textContent = '';
+        }
+
+        function checkAnswer(selectedButton) {
+            const currentQuestion = questions[currentQuestionIndex];
+            const selectedAnswer = selectedButton.textContent.trim();
+
+            if (selectedAnswer === currentQuestion.correct) {
+                document.getElementById('feedback').textContent = '正確!';
+                selectedButton.classList.add('correct');
+            } else {
+                document.getElementById('feedback').textContent = '錯誤!';
+                selectedButton.classList.add('incorrect');
+            }
+
+            setTimeout(() => {
+                loadQuestion();
+            }, 1000); // 等待1秒後進入下一題
+        }
+
+        // 初始載入第一題
+        loadQuestion();
+    </script>
+
+</body>
+</html>
