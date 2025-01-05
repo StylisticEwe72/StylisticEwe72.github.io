@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,30 +11,37 @@
             text-align: center;
             margin-top: 50px;
         }
+
         .question-container {
             margin-bottom: 20px;
         }
+
         .options-container {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
+
         .options-container button {
             margin: 5px;
             padding: 10px;
             cursor: pointer;
-            width: 80%; /* 控制按鈕寬度，保持美觀 */
+            width: 80%;
+            /* 控制按鈕寬度，保持美觀 */
         }
+
         .correct {
             background-color: green;
             color: white;
         }
+
         .incorrect {
             background-color: red;
             color: white;
         }
     </style>
 </head>
+
 <body>
 
     <div class="question-container">
@@ -518,6 +526,616 @@
                  "race condition"
                 ],
                 correct: "consistency"
+            },
+            {
+                question: "多行程執行時因為不同的指令執行順序,而得到不同的結果,這種情況稱為",
+                options: [
+                 "程序錯誤",
+                 "指令錯置", 
+                 "耦合狀況", 
+                 "競賽狀況"
+                ],
+                correct: "競賽狀況"
+            },
+            {
+                question: "臨界區的結構中不包含下列哪一項",
+                options: [
+                 "enter section",
+                 "critical section", 
+                 "remainder section", 
+                 "exit section"
+                ],
+                correct: "remainder section"
+            },
+            {
+                question: "臨界區的設計條件中不包含下列哪一項",
+                options: [
+                 "bounded waiting",
+                 "multi-entrance", 
+                 "mutual exclusive", 
+                 "progress"
+                ],
+                correct: "multi-entrance"
+            },
+            {
+                question: "使用硬體支援來實作同步機制硬體支援的同步機制不包含下列哪一項",
+                options: [
+                 "TestAndSet",
+                 "CallAndGo", 
+                 "Swap", 
+                 "Semaphore"
+                ],
+                correct: "CallAndGo"
+            },
+            {
+                question: "下列號誌運算中的的運算何者錯誤",
+                options: [
+                 "號誌s的數值為0時呼叫wait(s),該 行程會停在 wait(s),暫停執行,即被移到等待佇列",
+                 "號誌的數值大於1 時呼叫wait(s),會把號誌的內含值減1,並從wait(s)之後繼續執行下去", 
+                 "有其他行程停在wait(s)時,signal(s)會將其中的一個行程喚醒,即從等待佇列移回就緒佇列", 
+                 "沒有任何行程在wait(s)中等待時,signal(s)會將號誌s 的內含值加1"
+                ],
+                correct: "號誌的數值大於1 時呼叫wait(s),會把號誌的內含值減1,並從wait(s)之後繼續執行下去"
+            },
+            {
+                question: "下列何者不是作業系統發生死結的必要條件?",
+                options: [
+                 "有些執行緒佔用了部份它所需要的資源,但還有部份所需的資源該執行緒還沒有辦法佔用",
+                 "有些資源一但被佔用就無法被分享,直到佔用的執行緒釋放該資源為止", 
+                 "有多個執行緒正在循環等待被執行", 
+                 "有些執行緒對於任何它所需的資源都永遠無法使用到"
+                ],
+                correct: "有多個執行緒正在循環等待被執行"
+            },
+            {
+                question: "下列敘述何者正確",
+                options: [
+                 "預防死結是讓死結的四個必要條件其中一個不成立,就不會發生死結",
+                 "銀行家演算法是在發生死結後解決系統死結的問題", 
+                 "在討論行程同步時,臨界區問是指儲存共用資料的記憶體,不是程式碼的記憶體", 
+                 "計數號誌的值可以不受限制"
+                ],
+                correct: "預防死結是讓死結的四個必要條件其中一個不成立,就不會發生死結"
+            },
+            {
+                question: "大部分的作業系統(包括UNIX)採用那一種方法處理死結?",
+                options: [
+                 "使用其一種協議,確保系統不會進入死結",
+                 "允許系統進入死結狀態後,在想辦法恢復之", 
+                 "忽視此問題,假裝系統沒有發生過死結", 
+                 "發生死結後,就讓系統當機"
+                ],
+                correct: "忽視此問題,假裝系統沒有發生過死結"
+            },
+            {
+                question: "死結發生的四個條件中,要讓資源至少有一項是不可共用者稱為",
+                options: [
+                 "mutual exclusive",
+                 "hold and wait", 
+                 "no preemptive", 
+                 "circular wait"
+                ],
+                correct: "mutual exclusive"
+            },
+            {
+                question: "死結發生的四個條件中,行程在等候其他資源的時候,仍舊佔用某些資源稱",
+                options: [
+                 "mutual exclusive",
+                 "hold and wait", 
+                 "no preemptive", 
+                 "circular wait"
+                ],
+                correct: "hold and wait"
+            },
+            {
+                question: "死結發生的四個條件中,不能強制從已經取得資源的行程手中搶走它的資源稱為",
+                options: [
+                 "mutual exclusive",
+                 "hold and wait", 
+                 "no preemptive", 
+                 "circular wait"
+                ],
+                correct: "no preemptive"
+            },
+            {
+                question: "死結發生的四個條件中,兩個或更多行程形成一個封閉迴路,每個行程都在等待迴路中的下個行程所佔用的某些資源稱為",
+                options: [
+                 "mutual exclusive",
+                 "hold and wait", 
+                 "no preemptive", 
+                 "circular wait"
+                ],
+                correct: "circular wait"
+            },
+            {
+                question: "Which of the following is true of cooperative scheduling?",
+                options: [
+                 "It requires a timer.",
+                 "A process koeps the CPU until it releases the CPU either by terminating or by switching to the waiting state.", 
+                 "It incurs a cost associated with access to shared data.", 
+                 "A process switches from the running state to the ready state"
+                ],
+                correct: "A process koeps the CPU until it releases the CPU either by terminating or by switching to the waiting state."
+            },
+            {
+                question: "__ is the number of processes that are completed per time unit.",
+                options: [
+                 "CPU utilization",
+                 "Response time", 
+                 "Turnaround time", 
+                 "Throughput"
+                ],
+                correct: "Throughput"
+            },
+            {
+                question: "__ scheduling is approximated by predicting the next CPU burst with an exponential average of the measured lengths of previous CPU bursts.",
+                options: [
+                 "Multilevel queue",
+                 "RR", 
+                 "FCFS", 
+                 "SJF"
+                ],
+                correct: "SJF"
+            },
+            {
+                question: "The __ scheduling algorithm is designed especially for time-sharing systems.",
+                options: [
+                 "SJF",
+                 "FCFS", 
+                 "RR", 
+                 "Multilevel queue"
+                ],
+                correct: "RR"
+            },
+            {
+                question: "Which of the following scheduling algorithms must be nonpreemptive?",
+                options: [
+                 "SJF",
+                 "RR", 
+                 "FCFS", 
+                 "priority algorithms"
+                ],
+                correct: "FCFS"
+            },
+            {
+                question: "Which of the following is true of multilevel queue scheduling?",
+                options: [
+                 "Processes can move between queues.",
+                 "Each queue has its own scheduling algorithm.", 
+                 "A queue cannot have absolute priority over lower-priority queues.", 
+                 "It is the most general CPU-scheduling algorithm."
+                ],
+                correct: "Each queue has its own scheduling algorithm."
+            },
+            {
+                question: "The default scheduling class for a process in Solaris is ____",
+                options: [
+                 "time sharing",
+                 "system", 
+                 "interactive", 
+                 "real-time"
+                ],
+                correct: "time sharing"
+            },
+            {
+                question: "Which of the following statements are false with regards to the Linux CFS scheduler? ",
+                options: [
+                 "Each task is assigned a proportion of CPU processing time.",
+                 "Lower numeric values indicate higher relative priorities.", 
+                 "There is a single,system-wide value of vruntime.", 
+                 "The scheduler doesn't directly assign priorities."
+                ],
+                correct: "There is a single,system-wide value of vruntime."
+            },
+            {
+                question: "The Linux CFS scheduler identifies _______ as the interval of time during which every runnable task should run at least once.",
+                options: [
+                 "virtual run time",
+                 "targeted latency", 
+                 "nice value", 
+                 "load balancing"
+                ],
+                correct: "targeted latency"
+            },
+            {
+                question: "In Little's formula, λ, represents the ___.",
+                options: [
+                 "average waiting time in the queue",
+                 "average arrival rate for new processes in the queue", 
+                 "average queue length", 
+                 "average CPU utilization"
+                ],
+                correct: "average arrival rate for new processes in the queue"
+            },
+            {
+                question: "In Solaris, what is the time quantum (in milliseconds) of an interactive thread with priority 35?",
+                options: [
+                 "25",
+                 "54", 
+                 "80", 
+                 "35"
+                ],
+                correct: "80"
+            },
+            {
+                question: "In Solaris, if an interactive thread with priority 15 uses its entire time quantum, what is its priority recalculated to?",
+                options: [
+                 "51",
+                 "5", 
+                 "160", 
+                 "It remains at 15"
+                ],
+                correct: "5"
+            },
+            {
+                question: "In Solaris, if an interactive thread with priority 25 is waiting for I/O, what is its priority recalculated to when it is eligible to run again?",
+                options: [
+                 "15",
+                 "120", 
+                 "52", 
+                 "It remains at 25"
+                ],
+                correct: "52"
+            },
+            {
+                question: "___ allows a thread to run on only one processor.",
+                options: [
+                 "Processor affinity",
+                 "Processor set", 
+                 "NUMA", 
+                 "Load balancing"
+                ],
+                correct: "Processor affinity"
+            },
+            {
+                question: "What is the numeric priority of a Windows thread in the NORMAL PRIORITY_CLASS with HIGHEST relative priority?",
+                options: [
+                 "24",
+                 "10", 
+                 "8", 
+                 "13"
+                ],
+                correct: "10"
+            },
+            {
+                question: "What is the numeric priority of a Windows thread in the HIGH_PRIORITY_CLASS with ABOVE_NORMAL relative priority?",
+                options: [
+                 "24",
+                 "10", 
+                 "8", 
+                 "14"
+                ],
+                correct: "14"
+            },
+            {
+                question: "What is the numeric priority of a Windows thread in the BELOW_NORMAL_PRIORITY_CLASS with NORMAL relative priority?",
+                options: [
+                 "5",
+                 "6", 
+                 "7", 
+                 "8"
+                ],
+                correct: "6"
+            },
+            {
+                question: "__ involves the decision of which kernel thread to schedule onto which CPU.",
+                options: [
+                 "Process-contention scope",
+                 "System-contention scope", 
+                 "Dispatcher", 
+                 "Round-robin scheduling"
+                ],
+                correct: "System-contention scope"
+            },
+            {
+                question: "With ___ a thread executes on a processor until a long-latency event (i.e. a memory stall) occurs.",
+                options: [
+                 "coarse-grained multithreading",
+                 "fine-grained multithreading", 
+                 "virtualization", 
+                 "multicore processors"
+                ],
+                correct: "coarse-grained multithreading"
+            },
+            {
+                question: "A significant problem with priority scheduling algorithms is __.",
+                options: [
+                 "complexity",
+                 "starvation", 
+                 "determining the length of the next CPU burst", 
+                 "determining the length of the time quantum"
+                ],
+                correct: "starvation"
+            },
+            {
+                question: "The ___ occurs in first-come-first-served scheduling when a process with a long CPU burst occupies the CPU.",
+                options: [
+                 "dispatch latency",
+                 "waiting time", 
+                 "convoy effect", 
+                 "system-contention scope"
+                ],
+                correct: "convoy effect"
+            },
+            {
+                question: "The rate of a periodic task in a hard real-time system is ___, where p is a period and is the processing time.",
+                options: [
+                 "1/p",
+                 "p/t", 
+                 "1/t", 
+                 "pt"
+                ],
+                correct: "1/p"
+            },
+            {
+                question: "Which of the following is true of the rate-monotonic scheduling algorithm?",
+                options: [
+                 "The task with the shortest period will have the lowest priority.",
+                 "It uses a dynamic priority policy.", 
+                 "CPU utilization is bounded when using this algorithm.", 
+                 "It is non-preemptive."
+                ],
+                correct: "CPU utilization is bounded when using this algorithm."
+            },
+            {
+                question: "Which of the following is true of carliest-deadline-first (EDF) scheduling algorithm?",
+                options: [
+                 "When a process becomes runnable, it must announce its deadline requirements to the system. ",
+                 "Deadlines are assigned as following: the earlier the deadline, the lower the priority; the later the deadline, the higher the priority.", 
+                 "Priorities are fixed; that is, they cannot be adjusted when a new process starts running.", 
+                 "It assigns priorities statically according to deadline."
+                ],
+                correct: "When a process becomes runnable, it must announce its deadline requirements to the system. "
+            },
+            {
+                question: "The two general approaches to load balancing are ___ and ___.",
+                options: [
+                 "soft affinity, hard affinity",
+                 "coarse grained, fine grained", 
+                 "soft real-time, hard real-time", 
+                 "push migration, pull migration"
+                ],
+                correct: "push migration, pull migration"
+            },
+            {
+                question: "A race condition _____.",
+                options: [
+                 "results when several threads try to access the same data concurrently",
+                 "results when several threads try to access and modify the same data concurrently", 
+                 "will result only if the outcome of execution does not depend on the order in which instructions are executed", 
+                 "None of the above"
+                ],
+                correct: "results when several threads try to access and modify the same data concurrently"
+            },
+            {
+                question: "An instruction that executes atomically ___.",
+                options: [
+                 "must consist of only one machine instruction",
+                 "executes as a single, uninterruptible unit", 
+                 "cannot be used to solve the critical section problem", 
+                 "All of the above"
+                ],
+                correct: "executes as a single, uninterruptible unit"
+            },
+            {
+                question: "A counting semaphore ___.",
+                options: [
+                 "is essentially an integer variable",
+                 "is accessed through only one standard operation", 
+                 "can be modified simultaneously by multiple threads", 
+                 "cannot be used to control access to a thread's critical sections"
+                ],
+                correct: "is essentially an integer variable"
+            },
+            {
+                question: "A mutex lock ___.",
+                options: [
+                 "is exactly like a counting semaphore",
+                 "is essentially a boolean variable", 
+                 "is not guaranteed to be atomic", 
+                 "can be used to eliminate busy waiting"
+                ],
+                correct: "is essentially a boolean variable"
+            },
+            {
+                question: "In Peterson's solution, the ___ variable indicates if a process is ready to enter its critical section. ",
+                options: [
+                 "turn",
+                 "lock", 
+                 "flag [i]", 
+                 "turn [i]"
+                ],
+                correct: "flag [i]"
+            },
+            {
+                question: "The first readers-writers problem ___.",
+                options: [
+                 "requires that, once a writer is ready, that writer performs its write as soon as possible.",
+                 "is not used to test synchronization primitives.", 
+                 "requires that no reader will be kept waiting unless a writer has already obtained permission to use the shared database.", 
+                 "requires that no reader will be kept waiting unless a reader has already obtained permission to use the shared database."
+                ],
+                correct: "requires that no reader will be kept waiting unless a writer has already obtained permission to use the shared database."
+            },
+            {
+                question: "A ___ type presents a set of programmer-defined operations that are provided mutual exclusion within it.",
+                options: [
+                 "transaction",
+                 "signal", 
+                 "binary", 
+                 "monitor"
+                ],
+                correct: "monitor"
+            },
+            {
+                question: "___ occurs when a higher-priority process needs to access a data structure that is currently being accessed by a lower-priority process.",
+                options: [
+                 "Priority inversion",
+                 "Deadlock", 
+                 "A race condition", 
+                 "A critical section"
+                ],
+                correct: "Priority inversion"
+            },
+            {
+                question: "What is the correct order of operations for protecting a critical section using mutex locks?",
+                options: [
+                 "release() followed by acquire()",
+                 "acquire() followed by release()", 
+                 "wait() followed by signal()", 
+                 "signal() followed by wait()"
+                ],
+                correct: "acquire() followed by release()"
+            },
+            {
+                question: "What is the correct order of operations for protecting a critical section using a binary semaphore?",
+                options: [
+                 "release() followed by acquire()",
+                 "acquire() followed by release()", 
+                 "wait() followed by signal()", 
+                 "signal() followed by wait()"
+                ],
+                correct: "wait() followed by signal()"
+            },
+            {
+                question: "___ is not a technique for handling critical sections in operating systems.",
+                options: [
+                 "Non-preemptive kernels",
+                 "Preemptive kernels", 
+                 "Spinlocks", 
+                 "Peterson's solution"
+                ],
+                correct: "Peterson's solution"
+            },
+            {
+                question: "A solution to the critical section problem does not have to satisfy which of the following requirements?",
+                options: [
+                 "mutual exclusion",
+                 "progress", 
+                 "atomicity", 
+                 "bounded waiting"
+                ],
+                correct: "atomicity"
+            },
+            {
+                question: "A(n) ___ refers to where a process is accessing/updating shared data.",
+                options: [
+                 "critical section",
+                 "entry section", 
+                 "mutex", 
+                 "test-and-set"
+                ],
+                correct: "critical section"
+            },
+            {
+                question: "___ can be used to prevent busy waiting when implementing a semaphore.",
+                options: [
+                 "Spinlocks",
+                 "Waiting queues", 
+                 "Mutex lock", 
+                 "Allowing the wait operation to succeed"
+                ],
+                correct: "Waiting queues"
+            },
+            {
+                question: "Assume an adaptive mutex is used for accessing shared data on a Solaris system with multiprocessing capabilities. Which of the following statements is not true?",
+                options: [
+                 "A waiting thread may spin while waiting for the lock to become available.",
+                 " A waiting thread may sleep while waiting for the lock to become available.", 
+                 "The adaptive mutex is only used to protect short segments of code.", 
+                 "Condition variables and semaphores are never used in place of an adaptive mutex."
+                ],
+                correct: "Condition variables and semaphores are never used in place of an adaptive mutex."
+            },
+            {
+                question: "What is the purpose of the mutex semaphore in the implementation of the bounded-buffer problem using semaphores?",
+                options: [
+                 "It indicates the number of empty slots in the buffer.",
+                 "It indicates the number of occupied slots in the buffer.", 
+                 "It controls access to the shared buffer.", 
+                 "It ensures mutual exclusion."
+                ],
+                correct: "It ensures mutual exclusion."
+            },
+            {
+                question: "How many philosophers may eat simultaneously in the Dining Philosophers problem with 5 philosophers?",
+                options: [
+                 "1",
+                 "2", 
+                 "3", 
+                 "5"
+                ],
+                correct: "2"
+            },
+            {
+                question: "Which of the following statements is true?",
+                options: [
+                 "A counting semaphore can never be used as a binary semaphore.",
+                 "A binary semaphore can never be used as a counting semaphore.", 
+                 "Spinlocks can be used to prevent busy waiting in the implementation of semaphore.", 
+                 "Counting semaphores can be used to control access to a resource with a finite number of instances."
+                ],
+                correct: "Spinlocks can be used to prevent busy waiting in the implementation of semaphore."
+            },
+            {
+                question: "__ is/are not a technique for managing critical sections in operating systems.",
+                options: [
+                 "Peterson's solution",
+                 "Preemptive kernel", 
+                 "Non-preemptive kernel", 
+                 "Semaphores"
+                ],
+                correct: "Peterson's solution"
+            },
+            {
+                question: "When using semaphores, a process invokes the wait() operation before accessing its critical section, followed by the signal () operation upon completion of its critical section. Consider reversing the order of these two operations first calling signal(), then calling wait(). What would be a possible outcome of this?",
+                options: [
+                 "Starvation is possible.",
+                 "Several processes could be active in their critical sections at the same time.", 
+                 "Mutual exclusion is still assured.", 
+                 "Deadlock is possible."
+                ],
+                correct: "Several processes could be active in their critical sections at the same time."
+            },
+            {
+                question: "Which of the following statements is true?",
+                options: [
+                 "Operations on atomic integers do not require locking.",
+                 "Operations on atomic integers do require additional locking.", 
+                 "Linux only provides the atomic inc() and atomic sub() operations.", 
+                 "Operations on atomic integers can be interrupted."
+                ],
+                correct: "Operations on atomic integers do not require locking."
+            },
+            {
+                question: "A(n) ___ is a sequence of read-write operations that are atomic.",
+                options: [
+                 "atomic integer",
+                 "semaphore", 
+                 "memory transaction", 
+                 "mutex lock"
+                ],
+                correct: "memory transaction"
+            },
+            {
+                question: "The OpenMP #pragma omp critical directive ___.",
+                options: [
+                 "behaves much like a mutex lock",
+                 "does not require programmers to identify critical sections", 
+                 "does not guarantee prevention of race conditions", 
+                 "is similar to functional languages"
+                ],
+                correct: "behaves much like a mutex lock"
+            },
+            {
+                question: "Another problem related to deadlocks is ___.",
+                options: [
+                 "race conditions",
+                 "critical sections", 
+                 "spinlocks", 
+                 "indefinite blocking"
+                ],
+                correct: "indefinite blocking"
             }
         ];
 
@@ -564,9 +1182,11 @@
             }, 2000); // 延遲1.5秒進入下一題
         }
 
+
         // 初始載入第一題
         loadQuestion();
     </script>
 
 </body>
+
 </html>
