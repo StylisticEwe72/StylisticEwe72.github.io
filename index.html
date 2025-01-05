@@ -58,117 +58,117 @@
     <script>
         const questions = [
             {
-                question: "一般說來,執行緒在執行的時候所需的資源將會比行程來的",
+                question: "1.一般說來,執行緒在執行的時候所需的資源將會比行程來的",
                 options: ["小", "一樣", "大", "無法確定,要視情況"],
                 correct: "小"
             },
             {
-                question: "一般說來,行程可以透過下列何者來與本地端作業系統溝通",
+                question: "2.一般說來,行程可以透過下列何者來與本地端作業系統溝通",
                 options: ["系統呼叫", "聲音", "傳聲筒", "變數傳遞"],
                 correct: "系統呼叫"
             },
             {
-                question: "一般在UNIX 系統上可見到的 pthread(POSIX thread),是遵循下列何種標準",
+                question: "3.一般在UNIX 系統上可見到的 pthread(POSIX thread),是遵循下列何種標準",
                 options: ["POSIX 1003.1c", "POSIX 1003.5", "POSIX 2003", "POSIX 801.C"],
                 correct: "POSIX 1003.1c"
             },
             {
-                question: "一般說來,行程在做本文切換的時候,會比執行緒作本文切換時來的慢,其主要原因是",
+                question: "4.一般說來,行程在做本文切換的時候,會比執行緒作本文切換時來的慢,其主要原因是",
                 options: ["行程在做本文切換的時候需要轉換整個虛擬記憶體位址", "行程需要釋放CPU的使用權", "行程需要獲得CPU的使用權", "行程要傳遞資訊給CPU"],
                 correct: "行程在做本文切換的時候需要轉換整個虛擬記憶體位址"
             },
             {
-                question: "一般說來,我們如何計算一個行程的下一個CPU使用時間",
+                question: "5.一般說來,我們如何計算一個行程的下一個CPU使用時間",
                 options: ["算術平均數", "指數平均數", "加權平均數", "統計平均數"],
                 correct: "指數平均數"
             },
             {
-                question: "長期、中期、短期排班程式中,何者的執行頻率最高",
+                question: "6.長期、中期、短期排班程式中,何者的執行頻率最高",
                 options: ["長期排班程式", "中期排班程式", "短期排班程式", "多層佇列排程"],
                 correct: "短期排班程式"
             },
             {
-                question: "下列哪種排班演算法較適合使用在分時系統中",
+                question: "7.下列哪種排班演算法較適合使用在分時系統中",
                 options: ["FCFS", "SJF", "RR", "SRT"],
                 correct: "RR"
             },
             {
-                question: "下列哪種排班演算法不會產生某行程飢餓(Starvation)的狀況?",
+                question: "8.下列哪種排班演算法不會產生某行程飢餓(Starvation)的狀況?",
                 options: ["優先權", "SJF", "RR", "SRT"],
                 correct: "RR"
             },
             {
-                question: "干特圖是由誰所發明的",
+                question: "9.干特圖是由誰所發明的",
                 options: ["美國科學家干特", "中研院院長李遠哲", "美國汽車大王福特", "愛因斯坦"],
                 correct: "美國科學家干特"
             },
             {
-                question: "定量模式分析的缺點是常有偏頗的情形,但其優點是",
+                question: "10.定量模式分析的缺點是常有偏頗的情形,但其優點是",
                 options: ["簡單", "複雜", "步驟繁雜", "資料量龐大"],
                 correct: "簡單"
             },
             {
-                question: "下列何者不是被拿來當CPU排班的準則?",
+                question: "11.下列何者不是被拿來當CPU排班的準則?",
                 options: ["行程所需時間", "回應時間", "I/O 等待時間", "CPU使用率"],
                 correct: "I/O 等待時間"
             },
             {
-                question: "對分時系統而言那一項排班準則最重要?",
+                question: "12.對分時系統而言那一項排班準則最重要?",
                 options: ["等待時間", "回應時間", "整體成效", "CPU 使用率"],
                 correct: "回應時間"
             },
             {
-                question: "以下何者不是呼叫 fork()的缺點",
+                question: "13.以下何者不是呼叫 fork()的缺點",
                 options: ["需要做大量記憶體的複製", "進行內文切換時需付出相當的代價", "兩個行程間可快速交換資料", "兩個行程間 無法直接進行溝通"],
                 correct: "兩個行程間可快速交換資料"
             },
             {
-                question: "以下何者不為多執行緒程式的優點",
+                question: "14.以下何者不為多執行緒程式的優點",
                 options: ["在一個程式某一部份被暫停,或程式在執行冗長操作時,便無法繼續執行", "執行緒問將共用它們所屬行程的記憶體和資源", "節省記憶體空間及快速的內文切換", "每一執行緒可以並行地在不同的處理器上執行"],
                 correct: "在一個程式某一部份被暫停,或程式在執行冗長操作時,便無法繼續執行"
             },
             {
-                question: "以下何者不為多核心系統編寫程式中目前的挑戰的領域",
+                question: "15.以下何者不為多核心系統編寫程式中目前的挑戰的領域",
                 options: ["切割活動", "平衡", "資料分裂", "資料獨立性"],
                 correct: "資料獨立性"
             },
             {
-                question: "以下對執行緒的描述,何者正確?",
+                question: "16.以下對執行緒的描述,何者正確?",
                 options: ["重量級行程", "使用CPU資源的基本單元", "與其他的執行緒分別使用獨立位址空間", "包含了一個程式計數器、一組暫存器、一個堆疊空間和所有執行時所用到的資料與程式碼"],
                 correct: "使用CPU資源的基本單元"
             },
             {
-                question: "以下對使用者執行緒及核心執行緒的描述,何者錯誤",
+                question: "17.以下對使用者執行緒及核心執行緒的描述,何者錯誤",
                 options: ["使用者執行緒利用執行緒函式庫來提供", "核心執行緒建立與管理執行緒時比使用者執行緒來得慢", "使用者執行緒建立與管理執行緒時比較有效率", "兩種執行緒,都是當行程中的執行緒暫停,則同行程中其他所有執行緒也都會暫停執行"],
                 correct: "兩種執行緒,都是當行程中的執行緒暫停,則同行程中其他所有執行緒也都會暫停執行"
             },
             {
-                question: "以下何種多執行緒的模型,會消耗比較多的資源",
+                question: "18.以下何種多執行緒的模型,會消耗比較多的資源",
                 options: ["多對一", "一對多", "一對一", "多對多"],
                 correct: "一對一"
             },
             {
-                question: "多元程式規劃系統的主要目的是",
+                question: "19.多元程式規劃系統的主要目的是",
                 options: ["禁止行程使用CPU,藉以降低CPU使用率", "隨時保有一個行程在執行,藉以提高CPU使用率", "只讓特定的行程使用CPU,盡量減少CPU使用率", "亂數選取行程執行,CPU使用率亦難以估計"],
                 correct: "隨時保有一個行程在執行,藉以提高CPU使用率"
             },
             {
-                question: "在單一行程或批次的系統中,當行程在等待時CPU是",
+                question: "20.在單一行程或批次的系統中,當行程在等待時CPU是",
                 options: ["忙碌狀態", "等待狀態", "休眠狀態", "閒置狀態"],
                 correct: "閒置狀態"
             },
             {
-                question: "行程排程是",
+                question: "21.行程排程是",
                 options: ["多工系統", "批次系統", "即時系統", "嵌入式系統的基礎"],
                 correct: "多工系統"
             },
             {
-                question: "CPU 排班程式(短程排程器)的用途是",
+                question: "22.CPU 排班程式(短程排程器)的用途是",
                 options: ["將閒置已久的程式置換出去,以降低多工程度", "從就緒佇列之中選出其中一個行程來執行", "從就緒佇列之中選出其中一個行程來刪除", "將閒置已久的程式置換回來,以增加多工程度"],
                 correct: "從就緒佇列之中選出其中一個行程來執行"
             },
             {
-                question: "以下哪兩種行程狀態的變化,為行程主動放棄執行權",
+                question: "23.以下哪兩種行程狀態的變化,為行程主動放棄執行權",
                 options: [
                  "執行狀態->等待狀態、執行狀態->就緒狀態",
                  "執行狀態->等待狀態、執行狀態->結束狀態", 
@@ -178,7 +178,7 @@
                 correct: "執行狀態->等待狀態、執行狀態->結束狀態"
             },
             {
-                question: "以下對不可搶先式排程的描述,何者錯誤",
+                question: "24.以下對不可搶先式排程的描述,何者錯誤",
                 options: [
                  "只有當執行中的行程進入懸置狀態或是終止的時候,其他行程才有可能取得CPU的控制權",
                  "在現代的互動式系統中,這樣的做法可能會讓其他的使用者或應用程式等待過久", 
@@ -188,7 +188,7 @@
                 correct: "需要比較複雜的CPU設計"
             },
             {
-                question: "以下為可搶先排班中,CPU排班的決策發生在下面四種情況,請問以下哪種狀況為錯誤?",
+                question: "25.以下為可搶先排班中,CPU排班的決策發生在下面四種情況,請問以下哪種狀況為錯誤?",
                 options: [
                  "當一行程從執行狀態轉變成等待狀態時(例如,I/O要 求,祈求等待其中一個子行程的結束)",
                  "當一行程從執行狀態轉變成就緒狀 態時(例如,當有中斷發生時)", 
@@ -198,7 +198,7 @@
                 correct: "當一行程閒置時"
             },
             {
-                question: "以下何者不適合當作CPU排班評定的標準",
+                question: "26.以下何者不適合當作CPU排班評定的標準",
                 options: [
                  "產量",
                  "CPU閒置率", 
@@ -208,7 +208,7 @@
                 correct: "CPU閒置率"
             },
             {
-                question: "以下何者為最簡單的不可搶先排程法",
+                question: "27.以下何者為最簡單的不可搶先排程法",
                 options: [
                  "FCFS",
                  "SJF", 
@@ -218,7 +218,7 @@
                 correct: "FCFS"
             },
             {
-                question: "請問FCFS會產生什麼問題",
+                question: "28.請問FCFS會產生什麼問題",
                 options: [
                  "可預測性高",
                  "複雜", 
@@ -228,7 +228,7 @@
                 correct: "護航現象"
             },
             {
-                question: "以下何者為最佳的不可搶先排程法",
+                question: "29.以下何者為最佳的不可搶先排程法",
                 options: [
                  "FCFS",
                  "SJF", 
@@ -238,7 +238,7 @@
                 correct: "SJF"
             },
             {
-                question: "以下何者不為優先權的指定標準",
+                question: "30.以下何者不為優先權的指定標準",
                 options: [
                  "指定的某些參數",
                  "使用者等級", 
@@ -248,7 +248,7 @@
                 correct: "行程的名字"
             },
             {
-                question: "循環分時排程(Round-Robin Scheduling)類似什麼的小單位搶先版",
+                question: "31.循環分時排程(Round-Robin Scheduling)類似什麼的小單位搶先版",
                 options: [
                  "FCFS",
                  "SJF", 
@@ -258,7 +258,7 @@
                 correct: "FCFS"
             },
             {
-                question: "循環分時排程(Round-Robin Scheduling)能提供較佳的",
+                question: "32.循環分時排程(Round-Robin Scheduling)能提供較佳的",
                 options: [
                  "等待時間",
                  "反應時間", 
@@ -268,7 +268,7 @@
                 correct: "反應時間"
             },
             {
-                question: "以下對於多層佇列排程的描述,何者正確?",
+                question: "33.以下對於多層佇列排程的描述,何者正確?",
                 options: [
                  "佇列與佇列之間沒有優先權的關係",
                  "將行程分類,不同類型的行程分在同一佇列", 
@@ -278,7 +278,7 @@
                 correct: "相同類型的行程分在同一佇列,在每個佇列內使用最適合該類行程的排程方法"
             },
             {
-                question: "以下對於多處理器排程的描述,何者錯誤?",
+                question: "34.以下對於多處理器排程的描述,何者錯誤?",
                 options: [
                  "若系統中的處理器皆為相同架構時,此系統稱為同質",
                  "同質系統中,通常將所有就緒的行程都放置於同一個佇列中", 
@@ -288,7 +288,7 @@
                 correct: "若系統中的處理器皆為相同架構時,此系統稱為異質"
             },
             {
-                question: "以下對於即時排程的敘述,何者錯誤",
+                question: "35.以下對於即時排程的敘述,何者錯誤",
                 options: [
                  "分派延遲必須很短",
                  "系統呼叫必須是不可搶先的", 
@@ -298,7 +298,7 @@
                 correct: "系統呼叫必須是不可搶先的"
             },
             {
-                question: "Which of the following descriptions regarding the multithread models: In (??) model, only one thread can access the kernel at a time on multiprocessors.",
+                question: "36.Which of the following descriptions regarding the multithread models: In (??) model, only one thread can access the kernel at a time on multiprocessors.",
                 options: [
                  "Many-to-One",
                  "One-to-One", 
@@ -308,7 +308,7 @@
                 correct: "One-to-One"
             },
             {
-                question: "Which of the following descriptions regarding the multithread models: In (??) model, it cannot support parallel execution.",
+                question: "37.Which of the following descriptions regarding the multithread models: In (??) model, it cannot support parallel execution.",
                 options: [
                  "Many-to-One",
                  "One-to-One", 
@@ -318,7 +318,7 @@
                 correct: "Many-to-One"
             },
             {
-                question: "Which of the following descriptions regarding the multithread models: In (??) model, the entire process will not affect if a thread makes a blocking system call.",
+                question: "38.Which of the following descriptions regarding the multithread models: In (??) model, the entire process will not affect if a thread makes a blocking system call.",
                 options: [
                  "Many-to-One",
                  "One-to-One", 
@@ -328,7 +328,7 @@
                 correct: "One-to-One"
             },
             {
-                question: "Which of the following descriptions regarding the multithread models: In (??) model, the number of kernel threads can be specific to either a particular application or a particular machine",
+                question: "39.Which of the following descriptions regarding the multithread models: In (??) model, the number of kernel threads can be specific to either a particular application or a particular machine",
                 options: [
                  "Many-to-One",
                  "One-to-One", 
@@ -338,7 +338,7 @@
                 correct: "Many-to-Many"
             },
             {
-                question: "Which of the following descriptions regarding the multithread models: In (??) model, the entire process will block if a thread makes a blocking system call.",
+                question: "40.Which of the following descriptions regarding the multithread models: In (??) model, the entire process will block if a thread makes a blocking system call.",
                 options: [
                  "Many-to-One",
                  "One-to-One", 
@@ -348,7 +348,7 @@
                 correct: "Many-to-One"
             },
             {
-                question: "Which of the following descriptions regarding the multithread models: In (??) model, developers can create as many user threads as necessary. ",
+                question: "41.Which of the following descriptions regarding the multithread models: In (??) model, developers can create as many user threads as necessary. ",
                 options: [
                  "Many-to-One",
                  "One-to-One", 
@@ -358,7 +358,7 @@
                 correct: "Many-to-Many"
             },
             {
-                question: "Which of the following descriptions regarding the multithread models: The two-level model is a variation of the (??) model. ",
+                question: "42.Which of the following descriptions regarding the multithread models: The two-level model is a variation of the (??) model. ",
                 options: [
                  "Many-to-One",
                  "One-to-One", 
@@ -368,7 +368,7 @@
                 correct: "Many-to-Many"
             },
             {
-                question: "Multi-Level-Feedback-Queue(MLFQ) is an approximation to (??) scheduling",
+                question: "43.Multi-Level-Feedback-Queue(MLFQ) is an approximation to (??) scheduling",
                 options: [
                  "FCFS",
                  "SRTF", 
@@ -378,7 +378,7 @@
                 correct: "FCFS"
             },
             {
-                question: "(??) scheduling algorithm always favors short processes",
+                question: "44.(??) scheduling algorithm always favors short processes",
                 options: [
                  "FCFS",
                  "SRTF", 
@@ -388,7 +388,7 @@
                 correct: "SJF"
             },
             {
-                question: "scheduling algorithm would probably have convey effect",
+                question: "45.scheduling algorithm would probably have convey effect",
                 options: [
                  "FCFS",
                  "SRTF", 
@@ -398,7 +398,7 @@
                 correct: "FCFS"
             },
             {
-                question: "(??) scheduling algorithm is non-preemptive",
+                question: "46.(??) scheduling algorithm is non-preemptive",
                 options: [
                  "FCFS",
                  "SRTF", 
@@ -408,7 +408,7 @@
                 correct: "FCFS"
             },
             {
-                question: "(??) scheduling algorithm is a variation of the priority scheduling algorithm.",
+                question: "47.(??) scheduling algorithm is a variation of the priority scheduling algorithm.",
                 options: [
                  "FCFS",
                  "SRTF", 
@@ -418,7 +418,7 @@
                 correct: "SRTF"
             },
             {
-                question: "(??) scheduling algorithm depends on the length of the next CPU burst of a process, rather than its total length",
+                question: "48.(??) scheduling algorithm depends on the length of the next CPU burst of a process, rather than its total length",
                 options: [
                  "FCFS",
                  "SRTF", 
@@ -428,7 +428,7 @@
                 correct: "SRTF"
             },
             {
-                question: "If the time quantum is to large, round-robin scheduling degenerates to (??) scheduling",
+                question: "49.If the time quantum is to large, round-robin scheduling degenerates to (??) scheduling",
                 options: [
                  "FCFS",
                  "SRTF", 
@@ -438,7 +438,7 @@
                 correct: "FCFS"
             },
             {
-                question: "On SMP systems, it is important to keep the workload balanced among all processors. There are two general approaches to load balancing. (??) migration occurs when an idle processor gets a waiting task from a busy processor.",
+                question: "50.On SMP systems, it is important to keep the workload balanced among all processors. There are two general approaches to load balancing. (??) migration occurs when an idle processor gets a waiting task from a busy processor.",
                 options: [
                  "push",
                  "pull", 
@@ -448,7 +448,7 @@
                 correct: "pull"
             },
             {
-                question: "On SMP systems, it is important to keep the workload balanced among all processors. There are two general approaches to load balancing. (??) migration checks the load of each processor periodically, if there is not balanced, the system migrate the processes from an overloading processor to an idle processor.",
+                question: "51.On SMP systems, it is important to keep the workload balanced among all processors. There are two general approaches to load balancing. (??) migration checks the load of each processor periodically, if there is not balanced, the system migrate the processes from an overloading processor to an idle processor.",
                 options: [
                  "push",
                  "pull", 
@@ -458,7 +458,7 @@
                 correct: "push"
             },
             {
-                question: "Semaphore 是在處理什麼問題?",
+                question: "52.Semaphore 是在處理什麼問題?",
                 options: [
                  "死結",
                  "虛擬記憶體", 
@@ -468,7 +468,7 @@
                 correct: "臨界區間(同步)"
             },
             {
-                question: "當一個行程會與其他行程共享資訊,或是影響其他行程所執行之指令的行程,就稱為",
+                question: "53.當一個行程會與其他行程共享資訊,或是影響其他行程所執行之指令的行程,就稱為",
                 options: [
                  "cofunction process",
                  "cooperating process", 
@@ -478,7 +478,7 @@
                 correct: "cooperating process"
             },
             {
-                question: "行程合作過程中所牽涉到的協調問題與處理機制稱為",
+                question: "54.行程合作過程中所牽涉到的協調問題與處理機制稱為",
                 options: [
                  "臨界區",
                  "關鍵區", 
@@ -488,7 +488,7 @@
                 correct: "同步"
             },
             {
-                question: "行程間的通訊稱謂",
+                question: "55.行程間的通訊稱謂",
                 options: [
                  "OPC",
                  "ICP", 
@@ -498,7 +498,7 @@
                 correct: "IPC"
             },
             {
-                question: "下列何者不是行程間常用的共享資訊的方式",
+                question: "56.下列何者不是行程間常用的共享資訊的方式",
                 options: [
                  "匯流排通訊",
                  "共用的檔案", 
@@ -508,7 +508,7 @@
                 correct: "信號"
             },
             {
-                question: "下列哪一個典型的同步問題在課本中沒有提到",
+                question: "57.下列哪一個典型的同步問題在課本中沒有提到",
                 options: [
                  "記憶體讀寫問題",
                  "有限緩衝區問題", 
@@ -518,7 +518,7 @@
                 correct: "記憶體讀寫問題"
             },
             {
-                question: "下列何者不是合作行程問可能發生的問題",
+                question: "58.下列何者不是合作行程問可能發生的問題",
                 options: [
                  "starvation",
                  "consistency", 
@@ -528,7 +528,7 @@
                 correct: "consistency"
             },
             {
-                question: "多行程執行時因為不同的指令執行順序,而得到不同的結果,這種情況稱為",
+                question: "59.多行程執行時因為不同的指令執行順序,而得到不同的結果,這種情況稱為",
                 options: [
                  "程序錯誤",
                  "指令錯置", 
@@ -538,7 +538,7 @@
                 correct: "競賽狀況"
             },
             {
-                question: "臨界區的結構中不包含下列哪一項",
+                question: "60.臨界區的結構中不包含下列哪一項",
                 options: [
                  "enter section",
                  "critical section", 
@@ -548,7 +548,7 @@
                 correct: "remainder section"
             },
             {
-                question: "臨界區的設計條件中不包含下列哪一項",
+                question: "61.臨界區的設計條件中不包含下列哪一項",
                 options: [
                  "bounded waiting",
                  "multi-entrance", 
@@ -558,7 +558,7 @@
                 correct: "multi-entrance"
             },
             {
-                question: "使用硬體支援來實作同步機制硬體支援的同步機制不包含下列哪一項",
+                question: "62.使用硬體支援來實作同步機制硬體支援的同步機制不包含下列哪一項",
                 options: [
                  "TestAndSet",
                  "CallAndGo", 
@@ -568,7 +568,7 @@
                 correct: "CallAndGo"
             },
             {
-                question: "下列號誌運算中的的運算何者錯誤",
+                question: "63.下列號誌運算中的的運算何者錯誤",
                 options: [
                  "號誌s的數值為0時呼叫wait(s),該 行程會停在 wait(s),暫停執行,即被移到等待佇列",
                  "號誌的數值大於1 時呼叫wait(s),會把號誌的內含值減1,並從wait(s)之後繼續執行下去", 
@@ -578,7 +578,7 @@
                 correct: "號誌的數值大於1 時呼叫wait(s),會把號誌的內含值減1,並從wait(s)之後繼續執行下去"
             },
             {
-                question: "下列何者不是作業系統發生死結的必要條件?",
+                question: "64.下列何者不是作業系統發生死結的必要條件?",
                 options: [
                  "有些執行緒佔用了部份它所需要的資源,但還有部份所需的資源該執行緒還沒有辦法佔用",
                  "有些資源一但被佔用就無法被分享,直到佔用的執行緒釋放該資源為止", 
@@ -588,7 +588,7 @@
                 correct: "有多個執行緒正在循環等待被執行"
             },
             {
-                question: "下列敘述何者正確",
+                question: "65.下列敘述何者正確",
                 options: [
                  "預防死結是讓死結的四個必要條件其中一個不成立,就不會發生死結",
                  "銀行家演算法是在發生死結後解決系統死結的問題", 
@@ -598,7 +598,7 @@
                 correct: "預防死結是讓死結的四個必要條件其中一個不成立,就不會發生死結"
             },
             {
-                question: "大部分的作業系統(包括UNIX)採用那一種方法處理死結?",
+                question: "66.大部分的作業系統(包括UNIX)採用那一種方法處理死結?",
                 options: [
                  "使用其一種協議,確保系統不會進入死結",
                  "允許系統進入死結狀態後,在想辦法恢復之", 
@@ -608,7 +608,7 @@
                 correct: "忽視此問題,假裝系統沒有發生過死結"
             },
             {
-                question: "死結發生的四個條件中,要讓資源至少有一項是不可共用者稱為",
+                question: "67.死結發生的四個條件中,要讓資源至少有一項是不可共用者稱為",
                 options: [
                  "mutual exclusive",
                  "hold and wait", 
@@ -618,7 +618,7 @@
                 correct: "mutual exclusive"
             },
             {
-                question: "死結發生的四個條件中,行程在等候其他資源的時候,仍舊佔用某些資源稱",
+                question: "68.死結發生的四個條件中,行程在等候其他資源的時候,仍舊佔用某些資源稱",
                 options: [
                  "mutual exclusive",
                  "hold and wait", 
@@ -628,7 +628,7 @@
                 correct: "hold and wait"
             },
             {
-                question: "死結發生的四個條件中,不能強制從已經取得資源的行程手中搶走它的資源稱為",
+                question: "69.死結發生的四個條件中,不能強制從已經取得資源的行程手中搶走它的資源稱為",
                 options: [
                  "mutual exclusive",
                  "hold and wait", 
@@ -638,7 +638,7 @@
                 correct: "no preemptive"
             },
             {
-                question: "死結發生的四個條件中,兩個或更多行程形成一個封閉迴路,每個行程都在等待迴路中的下個行程所佔用的某些資源稱為",
+                question: "70.死結發生的四個條件中,兩個或更多行程形成一個封閉迴路,每個行程都在等待迴路中的下個行程所佔用的某些資源稱為",
                 options: [
                  "mutual exclusive",
                  "hold and wait", 
@@ -648,7 +648,7 @@
                 correct: "circular wait"
             },
             {
-                question: "Which of the following is true of cooperative scheduling?",
+                question: "71.Which of the following is true of cooperative scheduling?",
                 options: [
                  "It requires a timer.",
                  "A process koeps the CPU until it releases the CPU either by terminating or by switching to the waiting state.", 
@@ -658,7 +658,7 @@
                 correct: "A process koeps the CPU until it releases the CPU either by terminating or by switching to the waiting state."
             },
             {
-                question: "__ is the number of processes that are completed per time unit.",
+                question: "72.__ is the number of processes that are completed per time unit.",
                 options: [
                  "CPU utilization",
                  "Response time", 
@@ -668,7 +668,7 @@
                 correct: "Throughput"
             },
             {
-                question: "__ scheduling is approximated by predicting the next CPU burst with an exponential average of the measured lengths of previous CPU bursts.",
+                question: "73.__ scheduling is approximated by predicting the next CPU burst with an exponential average of the measured lengths of previous CPU bursts.",
                 options: [
                  "Multilevel queue",
                  "RR", 
@@ -678,7 +678,7 @@
                 correct: "SJF"
             },
             {
-                question: "The __ scheduling algorithm is designed especially for time-sharing systems.",
+                question: "74.The __ scheduling algorithm is designed especially for time-sharing systems.",
                 options: [
                  "SJF",
                  "FCFS", 
@@ -688,7 +688,7 @@
                 correct: "RR"
             },
             {
-                question: "Which of the following scheduling algorithms must be nonpreemptive?",
+                question: "75.Which of the following scheduling algorithms must be nonpreemptive?",
                 options: [
                  "SJF",
                  "RR", 
@@ -698,7 +698,7 @@
                 correct: "FCFS"
             },
             {
-                question: "Which of the following is true of multilevel queue scheduling?",
+                question: "76.Which of the following is true of multilevel queue scheduling?",
                 options: [
                  "Processes can move between queues.",
                  "Each queue has its own scheduling algorithm.", 
@@ -708,7 +708,7 @@
                 correct: "Each queue has its own scheduling algorithm."
             },
             {
-                question: "The default scheduling class for a process in Solaris is ____",
+                question: "77.The default scheduling class for a process in Solaris is ____",
                 options: [
                  "time sharing",
                  "system", 
@@ -718,7 +718,7 @@
                 correct: "time sharing"
             },
             {
-                question: "Which of the following statements are false with regards to the Linux CFS scheduler? ",
+                question: "78.Which of the following statements are false with regards to the Linux CFS scheduler? ",
                 options: [
                  "Each task is assigned a proportion of CPU processing time.",
                  "Lower numeric values indicate higher relative priorities.", 
@@ -728,7 +728,7 @@
                 correct: "There is a single,system-wide value of vruntime."
             },
             {
-                question: "The Linux CFS scheduler identifies _______ as the interval of time during which every runnable task should run at least once.",
+                question: "79.The Linux CFS scheduler identifies _______ as the interval of time during which every runnable task should run at least once.",
                 options: [
                  "virtual run time",
                  "targeted latency", 
@@ -738,7 +738,7 @@
                 correct: "targeted latency"
             },
             {
-                question: "In Little's formula, λ, represents the ___.",
+                question: "80.In Little's formula, λ, represents the ___.",
                 options: [
                  "average waiting time in the queue",
                  "average arrival rate for new processes in the queue", 
@@ -748,7 +748,7 @@
                 correct: "average arrival rate for new processes in the queue"
             },
             {
-                question: "In Solaris, what is the time quantum (in milliseconds) of an interactive thread with priority 35?",
+                question: "81.In Solaris, what is the time quantum (in milliseconds) of an interactive thread with priority 35?",
                 options: [
                  "25",
                  "54", 
@@ -758,7 +758,7 @@
                 correct: "80"
             },
             {
-                question: "In Solaris, if an interactive thread with priority 15 uses its entire time quantum, what is its priority recalculated to?",
+                question: "82.In Solaris, if an interactive thread with priority 15 uses its entire time quantum, what is its priority recalculated to?",
                 options: [
                  "51",
                  "5", 
@@ -768,7 +768,7 @@
                 correct: "5"
             },
             {
-                question: "In Solaris, if an interactive thread with priority 25 is waiting for I/O, what is its priority recalculated to when it is eligible to run again?",
+                question: "83.In Solaris, if an interactive thread with priority 25 is waiting for I/O, what is its priority recalculated to when it is eligible to run again?",
                 options: [
                  "15",
                  "120", 
@@ -778,7 +778,7 @@
                 correct: "52"
             },
             {
-                question: "___ allows a thread to run on only one processor.",
+                question: "84.___ allows a thread to run on only one processor.",
                 options: [
                  "Processor affinity",
                  "Processor set", 
@@ -788,7 +788,7 @@
                 correct: "Processor affinity"
             },
             {
-                question: "What is the numeric priority of a Windows thread in the NORMAL PRIORITY_CLASS with HIGHEST relative priority?",
+                question: "85.What is the numeric priority of a Windows thread in the NORMAL PRIORITY_CLASS with HIGHEST relative priority?",
                 options: [
                  "24",
                  "10", 
@@ -798,7 +798,7 @@
                 correct: "10"
             },
             {
-                question: "What is the numeric priority of a Windows thread in the HIGH_PRIORITY_CLASS with ABOVE_NORMAL relative priority?",
+                question: "86.What is the numeric priority of a Windows thread in the HIGH_PRIORITY_CLASS with ABOVE_NORMAL relative priority?",
                 options: [
                  "24",
                  "10", 
@@ -808,7 +808,7 @@
                 correct: "14"
             },
             {
-                question: "What is the numeric priority of a Windows thread in the BELOW_NORMAL_PRIORITY_CLASS with NORMAL relative priority?",
+                question: "87.What is the numeric priority of a Windows thread in the BELOW_NORMAL_PRIORITY_CLASS with NORMAL relative priority?",
                 options: [
                  "5",
                  "6", 
@@ -818,7 +818,7 @@
                 correct: "6"
             },
             {
-                question: "__ involves the decision of which kernel thread to schedule onto which CPU.",
+                question: "88.__ involves the decision of which kernel thread to schedule onto which CPU.",
                 options: [
                  "Process-contention scope",
                  "System-contention scope", 
@@ -828,7 +828,7 @@
                 correct: "System-contention scope"
             },
             {
-                question: "With ___ a thread executes on a processor until a long-latency event (i.e. a memory stall) occurs.",
+                question: "89.With ___ a thread executes on a processor until a long-latency event (i.e. a memory stall) occurs.",
                 options: [
                  "coarse-grained multithreading",
                  "fine-grained multithreading", 
@@ -838,7 +838,7 @@
                 correct: "coarse-grained multithreading"
             },
             {
-                question: "A significant problem with priority scheduling algorithms is __.",
+                question: "90.A significant problem with priority scheduling algorithms is __.",
                 options: [
                  "complexity",
                  "starvation", 
@@ -848,7 +848,7 @@
                 correct: "starvation"
             },
             {
-                question: "The ___ occurs in first-come-first-served scheduling when a process with a long CPU burst occupies the CPU.",
+                question: "91.The ___ occurs in first-come-first-served scheduling when a process with a long CPU burst occupies the CPU.",
                 options: [
                  "dispatch latency",
                  "waiting time", 
@@ -858,7 +858,7 @@
                 correct: "convoy effect"
             },
             {
-                question: "The rate of a periodic task in a hard real-time system is ___, where p is a period and is the processing time.",
+                question: "92.The rate of a periodic task in a hard real-time system is ___, where p is a period and is the processing time.",
                 options: [
                  "1/p",
                  "p/t", 
@@ -868,7 +868,7 @@
                 correct: "1/p"
             },
             {
-                question: "Which of the following is true of the rate-monotonic scheduling algorithm?",
+                question: "93.Which of the following is true of the rate-monotonic scheduling algorithm?",
                 options: [
                  "The task with the shortest period will have the lowest priority.",
                  "It uses a dynamic priority policy.", 
@@ -878,7 +878,7 @@
                 correct: "CPU utilization is bounded when using this algorithm."
             },
             {
-                question: "Which of the following is true of carliest-deadline-first (EDF) scheduling algorithm?",
+                question: "94.Which of the following is true of carliest-deadline-first (EDF) scheduling algorithm?",
                 options: [
                  "When a process becomes runnable, it must announce its deadline requirements to the system. ",
                  "Deadlines are assigned as following: the earlier the deadline, the lower the priority; the later the deadline, the higher the priority.", 
@@ -888,7 +888,7 @@
                 correct: "When a process becomes runnable, it must announce its deadline requirements to the system. "
             },
             {
-                question: "The two general approaches to load balancing are ___ and ___.",
+                question: "95.The two general approaches to load balancing are ___ and ___.",
                 options: [
                  "soft affinity, hard affinity",
                  "coarse grained, fine grained", 
@@ -898,7 +898,7 @@
                 correct: "push migration, pull migration"
             },
             {
-                question: "A race condition _____.",
+                question: "96.A race condition _____.",
                 options: [
                  "results when several threads try to access the same data concurrently",
                  "results when several threads try to access and modify the same data concurrently", 
@@ -908,7 +908,7 @@
                 correct: "results when several threads try to access and modify the same data concurrently"
             },
             {
-                question: "An instruction that executes atomically ___.",
+                question: "97.An instruction that executes atomically ___.",
                 options: [
                  "must consist of only one machine instruction",
                  "executes as a single, uninterruptible unit", 
@@ -918,7 +918,7 @@
                 correct: "executes as a single, uninterruptible unit"
             },
             {
-                question: "A counting semaphore ___.",
+                question: "98.A counting semaphore ___.",
                 options: [
                  "is essentially an integer variable",
                  "is accessed through only one standard operation", 
@@ -928,7 +928,7 @@
                 correct: "is essentially an integer variable"
             },
             {
-                question: "A mutex lock ___.",
+                question: "99.A mutex lock ___.",
                 options: [
                  "is exactly like a counting semaphore",
                  "is essentially a boolean variable", 
@@ -938,7 +938,7 @@
                 correct: "is essentially a boolean variable"
             },
             {
-                question: "In Peterson's solution, the ___ variable indicates if a process is ready to enter its critical section. ",
+                question: "100.In Peterson's solution, the ___ variable indicates if a process is ready to enter its critical section. ",
                 options: [
                  "turn",
                  "lock", 
@@ -948,7 +948,7 @@
                 correct: "flag [i]"
             },
             {
-                question: "The first readers-writers problem ___.",
+                question: "101.The first readers-writers problem ___.",
                 options: [
                  "requires that, once a writer is ready, that writer performs its write as soon as possible.",
                  "is not used to test synchronization primitives.", 
@@ -958,7 +958,7 @@
                 correct: "requires that no reader will be kept waiting unless a writer has already obtained permission to use the shared database."
             },
             {
-                question: "A ___ type presents a set of programmer-defined operations that are provided mutual exclusion within it.",
+                question: "102.A ___ type presents a set of programmer-defined operations that are provided mutual exclusion within it.",
                 options: [
                  "transaction",
                  "signal", 
@@ -968,7 +968,7 @@
                 correct: "monitor"
             },
             {
-                question: "___ occurs when a higher-priority process needs to access a data structure that is currently being accessed by a lower-priority process.",
+                question: "103.___ occurs when a higher-priority process needs to access a data structure that is currently being accessed by a lower-priority process.",
                 options: [
                  "Priority inversion",
                  "Deadlock", 
@@ -978,7 +978,7 @@
                 correct: "Priority inversion"
             },
             {
-                question: "What is the correct order of operations for protecting a critical section using mutex locks?",
+                question: "104.What is the correct order of operations for protecting a critical section using mutex locks?",
                 options: [
                  "release() followed by acquire()",
                  "acquire() followed by release()", 
@@ -988,7 +988,7 @@
                 correct: "acquire() followed by release()"
             },
             {
-                question: "What is the correct order of operations for protecting a critical section using a binary semaphore?",
+                question: "105.What is the correct order of operations for protecting a critical section using a binary semaphore?",
                 options: [
                  "release() followed by acquire()",
                  "acquire() followed by release()", 
@@ -998,7 +998,7 @@
                 correct: "wait() followed by signal()"
             },
             {
-                question: "___ is not a technique for handling critical sections in operating systems.",
+                question: "106.___ is not a technique for handling critical sections in operating systems.",
                 options: [
                  "Non-preemptive kernels",
                  "Preemptive kernels", 
@@ -1008,7 +1008,7 @@
                 correct: "Peterson's solution"
             },
             {
-                question: "A solution to the critical section problem does not have to satisfy which of the following requirements?",
+                question: "107.A solution to the critical section problem does not have to satisfy which of the following requirements?",
                 options: [
                  "mutual exclusion",
                  "progress", 
@@ -1018,7 +1018,7 @@
                 correct: "atomicity"
             },
             {
-                question: "A(n) ___ refers to where a process is accessing/updating shared data.",
+                question: "108.A(n) ___ refers to where a process is accessing/updating shared data.",
                 options: [
                  "critical section",
                  "entry section", 
@@ -1028,7 +1028,7 @@
                 correct: "critical section"
             },
             {
-                question: "___ can be used to prevent busy waiting when implementing a semaphore.",
+                question: "109.___ can be used to prevent busy waiting when implementing a semaphore.",
                 options: [
                  "Spinlocks",
                  "Waiting queues", 
@@ -1038,7 +1038,7 @@
                 correct: "Waiting queues"
             },
             {
-                question: "Assume an adaptive mutex is used for accessing shared data on a Solaris system with multiprocessing capabilities. Which of the following statements is not true?",
+                question: "110.Assume an adaptive mutex is used for accessing shared data on a Solaris system with multiprocessing capabilities. Which of the following statements is not true?",
                 options: [
                  "A waiting thread may spin while waiting for the lock to become available.",
                  " A waiting thread may sleep while waiting for the lock to become available.", 
@@ -1048,7 +1048,7 @@
                 correct: "Condition variables and semaphores are never used in place of an adaptive mutex."
             },
             {
-                question: "What is the purpose of the mutex semaphore in the implementation of the bounded-buffer problem using semaphores?",
+                question: "111.What is the purpose of the mutex semaphore in the implementation of the bounded-buffer problem using semaphores?",
                 options: [
                  "It indicates the number of empty slots in the buffer.",
                  "It indicates the number of occupied slots in the buffer.", 
@@ -1058,7 +1058,7 @@
                 correct: "It ensures mutual exclusion."
             },
             {
-                question: "How many philosophers may eat simultaneously in the Dining Philosophers problem with 5 philosophers?",
+                question: "112.How many philosophers may eat simultaneously in the Dining Philosophers problem with 5 philosophers?",
                 options: [
                  "1",
                  "2", 
@@ -1068,7 +1068,7 @@
                 correct: "2"
             },
             {
-                question: "Which of the following statements is true?",
+                question: "113.Which of the following statements is true?",
                 options: [
                  "A counting semaphore can never be used as a binary semaphore.",
                  "A binary semaphore can never be used as a counting semaphore.", 
@@ -1078,7 +1078,7 @@
                 correct: "Spinlocks can be used to prevent busy waiting in the implementation of semaphore."
             },
             {
-                question: "__ is/are not a technique for managing critical sections in operating systems.",
+                question: "114.__ is/are not a technique for managing critical sections in operating systems.",
                 options: [
                  "Peterson's solution",
                  "Preemptive kernel", 
@@ -1088,7 +1088,7 @@
                 correct: "Peterson's solution"
             },
             {
-                question: "When using semaphores, a process invokes the wait() operation before accessing its critical section, followed by the signal () operation upon completion of its critical section. Consider reversing the order of these two operations first calling signal(), then calling wait(). What would be a possible outcome of this?",
+                question: "115.When using semaphores, a process invokes the wait() operation before accessing its critical section, followed by the signal () operation upon completion of its critical section. Consider reversing the order of these two operations first calling signal(), then calling wait(). What would be a possible outcome of this?",
                 options: [
                  "Starvation is possible.",
                  "Several processes could be active in their critical sections at the same time.", 
@@ -1098,7 +1098,7 @@
                 correct: "Several processes could be active in their critical sections at the same time."
             },
             {
-                question: "Which of the following statements is true?",
+                question: "116.Which of the following statements is true?",
                 options: [
                  "Operations on atomic integers do not require locking.",
                  "Operations on atomic integers do require additional locking.", 
@@ -1108,7 +1108,7 @@
                 correct: "Operations on atomic integers do not require locking."
             },
             {
-                question: "A(n) ___ is a sequence of read-write operations that are atomic.",
+                question: "117.A(n) ___ is a sequence of read-write operations that are atomic.",
                 options: [
                  "atomic integer",
                  "semaphore", 
@@ -1118,7 +1118,7 @@
                 correct: "memory transaction"
             },
             {
-                question: "The OpenMP #pragma omp critical directive ___.",
+                question: "118.The OpenMP #pragma omp critical directive ___.",
                 options: [
                  "behaves much like a mutex lock",
                  "does not require programmers to identify critical sections", 
@@ -1128,7 +1128,7 @@
                 correct: "behaves much like a mutex lock"
             },
             {
-                question: "Another problem related to deadlocks is ___.",
+                question: "119.Another problem related to deadlocks is ___.",
                 options: [
                  "race conditions",
                  "critical sections", 
