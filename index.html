@@ -27,7 +27,6 @@
             padding: 10px;
             cursor: pointer;
             width: 80%;
-            /* 控制按鈕寬度，保持美觀 */
         }
 
         .correct {
@@ -38,6 +37,10 @@
         .incorrect {
             background-color: red;
             color: white;
+        }
+
+        #controls {
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -54,9 +57,15 @@
         <button class="option" onclick="checkAnswer(this)">選項 4</button>
     </div>
     <div id="feedback" style="margin-top: 20px;"></div>
+    <div id="controls">
+        <button onclick="nextQuestion()">下一題</button>
+        <button onclick="retakeQuiz()">重新測驗</button>
+    </div>
+    <div id="score" style="margin-top: 20px;">得分: 0</div>
+    <div id="question-status" style="margin-top: 10px;">目前題數: 0 / 50</div>
 
     <script>
-        const questions = [
+        const allQuestions = [
             {
                 question: "1.一般說來,執行緒在執行的時候所需的資源將會比行程來的",
                 options: ["小", "一樣", "大", "無法確定,要視情況"],
@@ -1139,7 +1148,10 @@
             }
         ];
 
-        let currentQuestionIndex;
+        let selectedQuestions = [];
+        let questionsAnswered = 0;
+        let score = 0;
+        const totalQuestions = 50;
 
         function shuffleArray(array) {
             for (let i = array.length - 1; i > 0; i--) {
@@ -1148,42 +1160,89 @@
             }
         }
 
+        function selectQuestions() {
+            shuffleArray(allQuestions);
+            selectedQuestions = allQuestions.slice(0, totalQuestions);
+        }
+
         function loadQuestion() {
-            currentQuestionIndex = Math.floor(Math.random() * questions.length);
-            const currentQuestion = questions[currentQuestionIndex];
-            document.getElementById('question').textContent = currentQuestion.question;
+            if (questionsAnswered < totalQuestions) {
+                const currentQuestion = selectedQuestions[questionsAnswered];
+                document.getElementById('question').textContent = currentQuestion.question;
 
-            const optionsButtons = document.querySelectorAll('.option');
-            shuffleArray(currentQuestion.options);
+                const optionsButtons = document.querySelectorAll('.option');
+                shuffleArray(currentQuestion.options);
 
-            optionsButtons.forEach((button, index) => {
-                button.textContent = currentQuestion.options[index];
-                button.classList.remove('correct', 'incorrect');
-            });
+                optionsButtons.forEach((button, index) => {
+                    button.textContent = currentQuestion.options[index];
+                    button.classList.remove('correct', 'incorrect');
+                    button.disabled = false; // Enable the buttons
+                });
 
-            document.getElementById('feedback').textContent = '';
+                document.getElementById('feedback').textContent = '';
+                updateQuestionStatus();
+            } else {
+                document.getElementById('question').textContent = '測驗結束!';
+                document.querySelector('.options-container').style.display = 'none';
+                document.getElementById('controls').style.display = 'none';
+            }
         }
 
         function checkAnswer(selectedButton) {
-            const currentQuestion = questions[currentQuestionIndex];
+            const currentQuestion = selectedQuestions[questionsAnswered];
             const selectedAnswer = selectedButton.textContent.trim();
 
             if (selectedAnswer === currentQuestion.correct) {
-    document.getElementById('feedback').textContent = '正確!';
-    selectedButton.classList.add('correct');
-} else {
-    document.getElementById('feedback').innerHTML = '錯誤! 正確答案是:<br>' + currentQuestion.correct;
-    selectedButton.classList.add('incorrect');
-}
+                document.getElementById('feedback').textContent = '正確!';
+                selectedButton.classList.add('correct');
+                score += 2;
+            } else {
+                document.getElementById('feedback').innerHTML = '錯誤! 正確答案是:<br>' + currentQuestion.correct;
+                selectedButton.classList.add('incorrect');
+            }
 
+            document.getElementById('score').textContent = `得分: ${score}`;
+            questionsAnswered++;
 
-            setTimeout(() => {
-                loadQuestion();
-            }, 2000); // 延遲1.5秒進入下一題
+            disableOptions();
         }
 
+        function disableOptions() {
+            const optionsButtons = document.querySelectorAll('.option');
+            optionsButtons.forEach(button => {
+                button.disabled = true; // Disable all buttons
+            });
+        }
 
-        // 初始載入第一題
+        function nextQuestion() {
+            loadQuestion();
+        }
+
+        function resetQuiz() {
+            score = 0;
+            questionsAnswered = 0;
+            document.getElementById('score').textContent = `得分: ${score}`;
+            document.querySelector('.options-container').style.display = 'flex';
+            document.getElementById('controls').style.display = 'block';
+            loadQuestion();
+        }
+
+        function retakeQuiz() {
+            score = 0;
+            questionsAnswered = 0;
+            document.querySelector('.options-container').style.display = 'flex';
+            document.getElementById('controls').style.display = 'block';
+            selectQuestions();
+            document.getElementById('score').textContent = `得分: ${score}`;
+            loadQuestion();
+        }
+
+        function updateQuestionStatus() {
+            document.getElementById('question-status').textContent = `目前題數: ${questionsAnswered + 1} / ${totalQuestions}`;
+        }
+
+        // 初始載入並選擇題目
+        selectQuestions();
         loadQuestion();
     </script>
 
