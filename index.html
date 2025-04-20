@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>作業系統題庫練習網站</title>
+    <title>機器人練習網站</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -85,23 +85,558 @@
     <script>
         const allQuestions = [
             {
-                question: "一般說來,執行緒在執行的時候所需的資源將會比行程來的",
-                options: ["小", "一樣", "大", "無法確定,要視情況"],
-                correct: "小",
-                img: "erroe"
+                question: "下圖圈起部分為",
+                options: ["鏡頭", "聲納", "照明", "收音器"],
+                correct: "聲納",
+                img: "1.png"
             },
             {
-                question: "一般說來,行程可以透過下列何者來與本地端作業系統溝通",
-                options: ["系統呼叫", "聲音", "傳聲筒", "變數傳遞"],
-                correct: "系統呼叫",
-                img: "erroe"
+                question: "下圖為",
+                options: ["景深鏡頭", "全景鏡頭", "視覺感測器", "PTZ相機"],
+                correct: "視覺感測器",
+                img: "2.png"
             },
             {
-                question: "一般在UNIX 系統上可見到的 pthread(POSIX thread),是遵循下列何種標準",
-                options: ["POSIX 1003.1c", "POSIX 1003.5", "POSIX 2003", "POSIX 801.C"],
-                correct: "POSIX 1003.1c",
-                img: "1.JPG"
-            }
+                question: "下圖為",
+                options: ["鏡頭", "聲納", "雷射測距儀", "無線收發機"],
+                correct: "雷射測距儀",
+                img: "3.png"
+            },
+            {
+                question: "下圖為",
+                options: ["格型自我重組機器人", "鏈型自我重組機器人", "移動式模組機器人", "方形機器人"],
+                correct: "格型自我重組機器人",
+                img: "4.png"
+            },
+            {
+                question: "下圖為",
+                options: ["景深鏡頭", "全景鏡頭", "CCD變焦魚眼鏡頭", "PTZ相機"],
+                correct: "PTZ相機",
+                img: "5.png"
+            },
+            {
+                question: "下圖為",
+                options: ["慣性導航器", "聲納", "雷射測距儀", "無線收發機"],
+                correct: "慣性導航器",
+                img: "6.png"
+            },
+            {
+                question: "下圖為",
+                options: ["Kinect", "Microsoft", "Kincet", "DVD"],
+                correct: "Kinect",
+                img: "7.png"
+            },
+            {
+                question: "下圖為",
+                options: ["減速機", "伺服器", "電動缸", "線性馬達"],
+                correct: "電動缸",
+                img: "8.png"
+            },
+            {
+                question: "下圖為",
+                options: ["減速機", "伺服機", "電動缸", "線性馬達"],
+                correct: "伺服機",
+                img: "9.png"
+            },
+            {
+                question: "下圖為",
+                options: ["景深鏡頭", "全景鏡頭", "CCD變焦魚眼鏡頭", "PTZ相機"],
+                correct: "CCD變焦魚眼鏡頭",
+                img: "10.png"
+            },
+            {
+                question: "下圖為",
+                options: ["減速機", "伺服機", "電動缸", "線性馬達"],
+                correct: "減速機",
+                img: "11.png"
+            },
+            {
+                question: "下圖為",
+                options: ["水母機器人", "足式機器人", "昆蟲機器人", "模組機器人"],
+                correct: "水母機器人",
+                img: "12.png"
+            },
+            {
+                question: "下圖為",
+                options: ["景深鏡頭", "全景鏡頭", "CCD變焦魚眼鏡頭", "PTZ相機"],
+                correct: "全景鏡頭",
+                img: "13.png"
+            },
+            {
+                question: "智慧型機器人基本硬體元件，不包含",
+                options: ["致動器", "感測", "機械手臂", "運動機制"],
+                correct: "機械手臂",
+                img: ""
+            },
+            {
+                question: "感測器的輸出信號改變對於輸入信號成比例，稱為",
+                options: ["準確度", "精度", "線性", "分辨率"],
+                correct: "線性",
+                img: ""
+            },
+            {
+                question: "機器人第一法則",
+                options: ["機器人不得傷害人類，或袖手旁觀坐視人類受到傷害", "除非違背第一法則，機器人必須服從人類的命令", "在不違背第一及第二法則下，機器人必須保護自己", "機器人必須隨時待命"],
+                correct: "機器人不得傷害人類，或袖手旁觀坐視人類受到傷害",
+                img: ""
+            },
+            {
+                question: "無人駕駛飛行器，簡稱",
+                options: ["AAV", "DAV", "UAV", "VVA"],
+                correct: "UAV",
+                img: ""
+            },
+            {
+                question: "西元1986年第一步雙足人形機器人，為哪家公司產品?",
+                options: ["Honda", "Toyota", "Tesla", "華為"],
+                correct: "Honda",
+                img: ""
+            },
+            {
+                question: "機器人第二法則",
+                options: ["機器人不得傷害人類，或袖手旁觀坐視人類受到傷害", "除非違背第一法則，機器人必須服從人類的命令", "在不違背第一及第二法則下，機器人必須保護自己", "機器人必須隨時待命"],
+                correct: "除非違背第一法則，機器人必須服從人類的命令",
+                img: ""
+            },
+            {
+                question: "2007年，史丹佛大學推出的軟體開發平台是",
+                options: ["RDS", "ROS", "CLARAry", "ChatGPT"],
+                correct: "ROS",
+                img: ""
+            },
+            {
+                question: "透過應用金屬彈性力學原理所設計的減速機是",
+                options: ["諧和式減速機", "柔輪式減速機", "剛輪式減速機", "波式減速機"],
+                correct: "諧和式減速機",
+                img: ""
+            },
+            {
+                question: "深度感測器由一個紅外線投影以及哪一個感測器結合而成?",
+                options: ["CCD", "CMOS", "RGB", "SNR"],
+                correct: "CMOS",
+                img: ""
+            },
+            {
+                question: "減速機的常見機構是",
+                options: ["齒輪", "馬達", "壓電元件", "轉軸"],
+                correct: "齒輪",
+                img: ""
+            },
+            {
+                question: "在拍照時能保持對焦的最遠與最近距離的差異，稱為",
+                options: ["視場場", "解析度", "工作距離", "景深"],
+                correct: "景深",
+                img: ""
+            },
+            {
+                question: "機器人第三法則",
+                options: ["機器人不得傷害人類，或袖手旁觀坐視人類受到傷害", "除非違背第一法則，機器人必須服從人類的命令", "在不違背第一及第二法則下，機器人必須保護自己", "機器人必須隨時待命"],
+                correct: "在不違背第一及第二法則下，機器人必須保護自己",
+                img: ""
+            },
+            {
+                question: "AI為哪兩個英文的縮寫?",
+                options: ["Artificial Intelligence", "Antiface Identity", "American Interface", "Article Interface"],
+                correct: "Artificial Intelligence",
+                img: ""
+            },
+            {
+                question: "航位推算的準確度，為",
+                options: ["可操作性", "可控性", "導航能力", "穩定性"],
+                correct: "導航能力",
+                img: ""
+            },
+            {
+                question: "微機電系統的貢獻不包含",
+                options: ["小型化", "微電子集成", "智慧化", "高精度大規模製造"],
+                correct: "智慧化",
+                img: ""
+            },
+            {
+                question: "常用於遙控模型之動力來源是",
+                options: ["RC伺服機", "直流伺服機", "交流伺服機", "PC伺服機"],
+                correct: "RC伺服機",
+                img: ""
+            },
+            {
+                question: "伺服機中感測馬達目前位置之感測器，是",
+                options: ["微控制器", "EPROM", "減速機", "電位計"],
+                correct: "電位計",
+                img: ""
+            },
+            {
+                question: "紅外線感測器利用了三角測量和哪一種原理?",
+                options: ["雷射", "聲波", "影像殘留", "反射率"],
+                correct: "反射率",
+                img: ""
+            },
+            {
+                question: "一般電腦操作系統中所有機器人動作都是時間",
+                options: ["同步", "分享", "無關", "皆可"],
+                correct: "同步",
+                img: ""
+            },
+            {
+                question: "大多數移動機器人，屬於",
+                options: ["輪式", "足式", "履帶式", "旋翼式"],
+                correct: "輪式",
+                img: ""
+            },
+            {
+                question: "歷史悠久，俗稱工業機器人是指",
+                options: ["自走車", "機械手臂", "四旋翼", "雙足機器人"],
+                correct: "機械手臂",
+                img: ""
+            },
+            {
+                question: "軟體開發中可使用Python和C++編譯的是",
+                options: ["RDS", "ROS", "CLARAry", "ChatGPT"],
+                correct: "ROS",
+                img: ""
+            },
+            {
+                question: "智慧型機器人是指具有甚麼特性的機器人?",
+                options: ["智慧", "速度", "人性", "高貴"],
+                correct: "智慧",
+                img: ""
+            },
+            {
+                question: "利用壓電效應產生形狀變化的元件是",
+                options: ["壓電陶瓷馬達", "壓電晶體", "驅動聚合物", "人工肌肉"],
+                correct: "壓電陶瓷馬達",
+                img: ""
+            },
+            {
+                question: "機器人行進之控制方式為經過軌跡回授，適時修正指令之方式為",
+                options: ["開還控制", "閉還控制", "修正控制", "運動控制"],
+                correct: "閉還控制",
+                img: ""
+            },
+            {
+                question: "自我重組機器人，屬於",
+                options: ["家庭機器人", "服務機器人", "模組機器人", "群組機器人"],
+                correct: "模組機器人",
+                img: ""
+            },
+            {
+                question: "水下多少公尺壓力為大氣壓力兩倍",
+                options: ["10", "20", "33", "50"],
+                correct: "10",
+                img: ""
+            },
+            {
+                question: "在相機上可以拍到的區域，稱為",
+                options: ["視場場", "解析度", "工作距離", "景深"],
+                correct: "視場場",
+                img: ""
+            },
+            {
+                question: "Kinect是哪家公司產品",
+                options: ["nVidia", "Google", "Tesla", "Software"],
+                correct: "Software",
+                img: ""
+            },
+            {
+                question: "水下機器人，除了壓力以外，為了保護儀器，另一個問題是",
+                options: ["防水", "震動", "灰塵", "溫度"],
+                correct: "防水",
+                img: ""
+            },
+            {
+                question: "機器人環境的測量不包含",
+                options: ["視覺", "化學成分", "距離", "動作"],
+                correct: "動作",
+                img: ""
+            },
+            {
+                question: "兩個中心轉向輪市同步的，其轉向操控度是",
+                options: ["0", "1", "2", "-1"],
+                correct: "1",
+                img: ""
+            },
+            {
+                question: "何者為由電動機與螺桿所結合的產品?",
+                options: ["電動缸", "伺服機", "微控制器", "減速機"],
+                correct: "電動缸",
+                img: ""
+            },
+            {
+                question: "一群具相同功能和架構的機器人，稱為",
+                options: ["模組機器人", "群組機器人", "柔性機器人", "部落機器人"],
+                correct: "群組機器人",
+                img: ""
+            },
+            {
+                question: "距離感測器是基於何種原理?",
+                options: ["飛行時間", "量尺", "視覺", "參考點"],
+                correct: "飛行時間",
+                img: ""
+            },
+            {
+                question: "旋轉式致動器，應用範圍最廣的是",
+                options: ["電動機", "油壓機", "氣壓機機", "引擎"],
+                correct: "",
+                img: ""
+            },
+            {
+                question: "機器人機體本身測量包含(A)方向(B)位置(C)運動(D)尺寸(E)重量",
+                options: ["BDE", "ABE", "BCD", "ABC"],
+                correct: "ABC",
+                img: ""
+            },
+            {
+                question: "當機器人輪子超過3個以上，必須設計",
+                options: ["油壓系統", "驅動系統", "懸吊系統", "避障系統"],
+                correct: "懸吊系統",
+                img: ""
+            },
+            {
+                question: "油壓缸為一種由何者產生直線運動的誌動器?",
+                options: ["氣體", "流體", "電力", "壓力"],
+                correct: "流體",
+                img: ""
+            },
+            {
+                question: "慣性導航器應用陀螺儀以及哪種數據來估計機器人的相對位置等資料?",
+                options: ["加速度", "速度", "角度", "角速率"],
+                correct: "加速度",
+                img: ""
+            },
+            {
+                question: "伺服機中儲存馬達識別與控制參數的是",
+                options: ["微控制器", "EPROM", "減速機", "RAM"],
+                correct: "EPROM",
+                img: ""
+            },
+            {
+                question: "直流電動機之動作原理，主要依據",
+                options: ["佛萊明左手定則", "佛萊明右手定則", "安培右手定則", "法拉第原理"],
+                correct: "佛萊明左手定則",
+                img: ""
+            },
+            {
+                question: "微機電系統的貢獻不包含",
+                options: ["小型化", "微電子集成", "積體電路", "高精度大規模製造"],
+                correct: "高精度大規模製造",
+                img: ""
+            },
+            {
+                question: "感測器，是哪家公司的產品?哪家公司的產品?",
+                options: ["Google", "Nvidia", "Microsoft", "ETC"],
+                correct: "Microsoft",
+                img: ""
+            },
+            {
+                question: "西元1495年，誰設計出第一部具人型架構的騎士?",
+                options: ["華盛頓", "康熙", "達而文", "達文西"],
+                correct: "達文西",
+                img: ""
+            },
+            {
+                question: "致動器關鍵考量，不包含",
+                options: ["接觸特性", "電器特性", "環境類型", "穩定性"],
+                correct: "接觸特性",
+                img: ""
+            },
+            {
+                question: "交流電動機，恆速不變，不需要調速的是",
+                options: ["同步馬達", "感應馬達", "特殊馬達", "水下馬達"],
+                correct: "同步馬達",
+                img: ""
+            },
+            {
+                question: "機器人一詞，第一次被應用於捷克劇作中，是西元幾年?",
+                options: ["1900", "1920", "1930", "1940"],
+                correct: "1920",
+                img: ""
+            },
+            {
+                question: "驅動類型、運動學、動力學，為",
+                options: ["可操作性", "可控性", "導航能力", "穩定性"],
+                correct: "可控性",
+                img: ""
+            },
+            {
+                question: "在家庭還境內使用的機器人，稱為",
+                options: ["家庭機器人", "服務機器人", "打掃機器人", "柔性機器人"],
+                correct: "家庭機器人",
+                img: ""
+            },
+            {
+                question: "伺服機中接收控制封包指令並決定輸出訊號的是",
+                options: ["微控制器", "EPROM", "減速機", "RAM"],
+                correct: "微控制器",
+                img: ""
+            },
+            {
+                question: "一般而言，交流電動機使用",
+                options: ["三相電源", "單相電源", "直流電源", "特殊電源"],
+                correct: "三相電源",
+                img: ""
+            },
+            {
+                question: "微機電系統，簡稱",
+                options: ["PPMS", "LMMS", "MEMS", "MMES"],
+                correct: "MEMS",
+                img: ""
+            },
+            {
+                question: "氣壓缸為一種由何者產生直線運動的誌動器?",
+                options: ["氣體", "液體", "電力", "壓力"],
+                correct: "氣體",
+                img: ""
+            },
+            {
+                question: "以PWM脈寬調變為協定的伺服器是",
+                options: ["傳統伺服機", "新一代伺服機", "智慧型伺服機", "AI伺服機"],
+                correct: "傳統伺服機",
+                img: ""
+            },
+            {
+                question: "如同旋轉馬達從表面剖開至軸中心，將其拉成一直線",
+                options: ["減速機", "伺服器", "電動缸", "線性馬達"],
+                correct: "線性馬達",
+                img: ""
+            },
+            {
+                question: "蛇運動時，兩端翹起並在空中振動以減少摩擦力，這種運動稱為",
+                options: ["竇提升", "陡提升", "寶提升", "蛇提升"],
+                correct: "竇提升",
+                img: ""
+            },
+            {
+                question: "為了解決傳統RC伺服機的哪個問題?才由智慧型RC伺服機產生?",
+                options: ["扭力", "馬力", "控制", "接線"],
+                correct: "接線",
+                img: ""
+            },
+            {
+                question: "水母形水下機器人，為",
+                options: ["ACRM-5", "Asimo", "AquaJelly", "Fish"],
+                correct: "AquaJelly",
+                img: ""
+            },
+            {
+                question: "典型的水下機器人推進技術，為螺旋槳推進器及何者?",
+                options: ["電動魚鰭", "電動水母", "電動馬達", "電動水蛇"],
+                correct: "電動魚鰭",
+                img: ""
+            },
+            {
+                question: "模擬生物特性的機器人，稱為",
+                options: ["家庭機器人", "服務機器人", "打掃機器人", "柔性機器人"],
+                correct: "柔性機器人",
+                img: ""
+            },
+            {
+                question: "飛行運動主要可分為平翼(定翼)和哪一種?",
+                options: ["旋翼", "翅翼", "振翼", "變翼"],
+                correct: "旋翼",
+                img: ""
+            },
+            {
+                question: "機器人由一處移動至另一處的各種方法，稱為",
+                options: ["動力源", "致動器", "操作", "運動機制"],
+                correct: "運動機制",
+                img: ""
+            },
+            {
+                question: "模仿人類或昆蟲走路的機器人，為",
+                options: ["人形機器人", "仿生機器人", "步行機器人", "越野機器人"],
+                correct: "仿生機器人",
+                img: ""
+            },
+            {
+                question: "機器人環境的測量不包含",
+                options: ["視覺", "化學成分", "距離", "障礙物分類"],
+                correct: "障礙物分類",
+                img: ""
+            },
+            {
+                question: "交流電動機，特點在於結構簡單的是",
+                options: ["同步馬達", "感應馬達", "特殊馬達", "水下馬達"],
+                correct: "感應馬達",
+                img: ""
+            },
+            {
+                question: "2006年，微軟公司推出的機器人開發平台是",
+                options: ["RDS", "ROS", "CLARAry", "ChatGPT"],
+                correct: "RDS",
+                img: ""
+            },
+            {
+                question: "2D空間中，機器人運動的自由程度，稱為",
+                options: ["機動性", "自由度", "行動能力", "操控能力"],
+                correct: "機動性",
+                img: ""
+            },
+            {
+                question: "自我重組機器人，不包含以下哪一型",
+                options: ["鏈型", "三角型", "格型", "移動式"],
+                correct: "三角型",
+                img: ""
+            },
+            {
+                question: "直接經計算給於機器人指令，執行行進的控制方式",
+                options: ["開還控制", "閉還控制", "直接控制", "立即控制"],
+                correct: "開還控制",
+                img: ""
+            },
+            {
+                question: "當馬達提供的轉矩無法達到預期，將會裝設",
+                options: ["減速機", "轉速計", "差動器", "變壓器"],
+                correct: "減速機",
+                img: ""
+            },
+            {
+                question: "機器人最難征服的地形是",
+                options: ["空中", "水下", "泥地", "沙地"],
+                correct: "沙地",
+                img: ""
+            },
+            {
+                question: "一個平面上可以移動、旋轉的機器人，在2D空間中，自由度為",
+                options: ["0", "1", "2", "3"],
+                correct: "3",
+                img: ""
+            },
+            {
+                question: "機器人的英文是",
+                options: ["vehicle", "controller", "robot", "rocket"],
+                correct: "robot",
+                img: ""
+            },
+            {
+                question: "慣性導航器簡稱",
+                options: ["ICU", "IMU", "MIU", "UMI"],
+                correct: "IMU",
+                img: ""
+            },
+            {
+                question: "超音波馬達，屬於",
+                options: ["特殊馬達", "直流馬達", "交流馬達", "水下馬達"],
+                correct: "特殊馬達",
+                img: ""
+            },
+            {
+                question: "改變速度與方向的能力，為",
+                options: ["可操作性", "可控性", "導航能力", "穩定性"],
+                correct: "可操作性",
+                img: ""
+            },
+            {
+                question: "感測器可以檢測的最小變化，稱為",
+                options: ["準確度", "精度", "線性", "分辨率"],
+                correct: "分辨率",
+                img: ""
+            },
+            {
+                question: "新一代智慧伺服機，以何者為協定?",
+                options: ["通訊封包(Packet)", "脈寬調變(PWM)", "AC轉換", "DC轉換"],
+                correct: "通訊封包(Packet)",
+                img: ""
+            },
+
         ];
 
         let selectedQuestions = [];
@@ -129,7 +664,7 @@
                 const questionImg = document.getElementById('question-img');
                 const imgWrapper = document.getElementById('img-wrapper');
 
-                if (currentQuestion.img && currentQuestion.img !== "erroe") {
+                if (currentQuestion.img && currentQuestion.img !== "") {
                     questionImg.src = currentQuestion.img;
                     imgWrapper.style.display = 'flex';
                 } else {
@@ -162,7 +697,7 @@
             if (selectedAnswer === currentQuestion.correct) {
                 document.getElementById('feedback').textContent = '正確!';
                 selectedButton.classList.add('correct');
-                score += 1;
+                score += 2;
             } else {
                 document.getElementById('feedback').innerHTML = '錯誤! 正確答案是:<br>' + currentQuestion.correct;
                 selectedButton.classList.add('incorrect');
